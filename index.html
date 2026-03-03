@@ -404,114 +404,7 @@
       </div>
       <div class="message" id="message"></div>
 
-      <div class="jobs-grid">
-        <div class="job-card" id="job-dishes">
-          <span class="emoji">🍽️</span>
-          <div class="title">Dishwasher</div>
-          <div class="pay">$5.00 / shift</div>
-          <div class="time">Type 3 words</div>
-          <button class="work-btn" onclick="workShift('dishes')">Work Shift</button>
-        </div>
-
-        <div class="job-card" id="job-cashier">
-          <span class="emoji">🛒</span>
-          <div class="title">Cashier</div>
-          <div class="pay">$9.50 / shift</div>
-          <div class="time">Type 5 words</div>
-          <button class="work-btn" onclick="workShift('cashier')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('cashier')" id="unlock-cashier">🔒 Unlock (Lvl 3)</button>
-        </div>
-
-        <div class="job-card" id="job-janitor">
-          <span class="emoji">🧹</span>
-          <div class="title">Janitor</div>
-          <div class="pay">$10.00 / shift</div>
-          <div class="time">Type 5 words</div>
-          <button class="work-btn" onclick="workShift('janitor')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('janitor')" id="unlock-janitor">🔒 Unlock (Lvl 4)</button>
-        </div>
-
-        <div class="job-card" id="job-barista">
-          <span class="emoji">☕</span>
-          <div class="title">Barista</div>
-          <div class="pay">$13.00 / shift</div>
-          <div class="time">Type 6 words</div>
-          <button class="work-btn" onclick="workShift('barista')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('barista')" id="unlock-barista">🔒 Unlock (Lvl 5)</button>
-        </div>
-
-        <div class="job-card" id="job-stocker">
-          <span class="emoji">📦</span>
-          <div class="title">Shelf Stocker</div>
-          <div class="pay">$12.00 / shift</div>
-          <div class="time">Type 6 words</div>
-          <button class="work-btn" onclick="workShift('stocker')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('stocker')" id="unlock-stocker">🔒 Unlock (Lvl 6)</button>
-        </div>
-
-        <div class="job-card" id="job-delivery">
-          <span class="emoji">🚗</span>
-          <div class="title">Delivery Driver</div>
-          <div class="pay">$18.00 / shift</div>
-          <div class="time">Type 7 words</div>
-          <button class="work-btn" onclick="workShift('delivery')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('delivery')" id="unlock-delivery">🔒 Unlock (Lvl 8)</button>
-        </div>
-
-        <div class="job-card" id="job-callcenter">
-          <span class="emoji">🎧</span>
-          <div class="title">Call Center Rep</div>
-          <div class="pay">$16.00 / shift</div>
-          <div class="time">Type 7 words</div>
-          <button class="work-btn" onclick="workShift('callcenter')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('callcenter')" id="unlock-callcenter">🔒 Unlock (Lvl 9)</button>
-        </div>
-
-        <div class="job-card" id="job-waiter">
-          <span class="emoji">🍕</span>
-          <div class="title">Waiter + Tips</div>
-          <div class="pay">$10-30 / shift</div>
-          <div class="time">Type 6 words + tips</div>
-          <button class="work-btn" onclick="workShift('waiter')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('waiter')" id="unlock-waiter">🔒 Unlock (Lvl 10)</button>
-        </div>
-
-        <div class="job-card" id="job-warehouse">
-          <span class="emoji">🏗️</span>
-          <div class="title">Warehouse Picker</div>
-          <div class="pay">$22.00 / shift</div>
-          <div class="time">Type 8 words</div>
-          <button class="work-btn" onclick="workShift('warehouse')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('warehouse')" id="unlock-warehouse">🔒 Unlock (Lvl 12)</button>
-        </div>
-
-        <div class="job-card" id="job-freelance">
-          <span class="emoji">💻</span>
-          <div class="title">Freelance Dev</div>
-          <div class="pay">$28-68 / shift</div>
-          <div class="time">Type 10 words + bonus</div>
-          <button class="work-btn" onclick="workShift('freelance')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('freelance')" id="unlock-freelance">🔒 Unlock (Lvl 15)</button>
-        </div>
-
-        <div class="job-card" id="job-dataentry">
-          <span class="emoji">⌨️</span>
-          <div class="title">Data Entry Clerk</div>
-          <div class="pay">$32-67 / shift</div>
-          <div class="time">Type 11 words + bonus</div>
-          <button class="work-btn" onclick="workShift('dataentry')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('dataentry')" id="unlock-dataentry">🔒 Unlock (Lvl 18)</button>
-        </div>
-
-        <div class="job-card" id="job-security">
-          <span class="emoji">🛡️</span>
-          <div class="title">Night Security</div>
-          <div class="pay">$34.00 / shift</div>
-          <div class="time">Type 12 words</div>
-          <button class="work-btn" onclick="workShift('security')">Work Shift</button>
-          <button class="upgrade-btn" onclick="unlockJob('security')" id="unlock-security">🔒 Unlock (Lvl 21)</button>
-        </div>
-      </div>
+      <div class="jobs-grid" id="jobs-grid"></div>
     </div>
 
     <div class="panel">
@@ -621,7 +514,7 @@
     const SAVE_KEY = 'minwage_save';
     const CASINO_BALANCE_KEY = 'vc_balance'; // Same key the casino uses!
 
-    const JOBS = {
+    const BASE_JOBS = {
       dishes:     { name: 'Dishwasher',       emoji: '🍽️', pay: 5.00,  words: 3,  timeLimit: 15, level: 1,  tip: false },
       cashier:    { name: 'Cashier',          emoji: '🛒', pay: 9.50,  words: 5,  timeLimit: 20, level: 3,  tip: true, tipMax: 5 },
       janitor:    { name: 'Janitor',          emoji: '🧹', pay: 10.00, words: 5,  timeLimit: 20, level: 4,  tip: false },
@@ -635,6 +528,157 @@
       dataentry:  { name: 'Data Entry Clerk', emoji: '⌨️', pay: 32.00, words: 11, timeLimit: 32, level: 18, tip: true, tipMax: 35 },
       security:   { name: 'Night Security',   emoji: '🛡️', pay: 34.00, words: 12, timeLimit: 34, level: 21, tip: false },
     };
+
+    const EXTENDED_JOB_TEMPLATES = [
+      { id: 'supervisor', name: 'Shift Supervisor', emoji: '📋' },
+      { id: 'technician', name: 'Service Technician', emoji: '🔧' },
+      { id: 'dispatcher', name: 'Dispatch Coordinator', emoji: '📡' },
+      { id: 'trainer', name: 'Team Trainer', emoji: '🎓' },
+      { id: 'analyst', name: 'Operations Analyst', emoji: '📊' },
+      { id: 'lead', name: 'Department Lead', emoji: '🧠' },
+      { id: 'specialist', name: 'Process Specialist', emoji: '🗂️' },
+      { id: 'coordinator', name: 'Project Coordinator', emoji: '🗓️' },
+      { id: 'manager', name: 'Site Manager', emoji: '🏢' },
+      { id: 'consultant', name: 'Business Consultant', emoji: '💼' },
+      { id: 'developer2', name: 'Software Engineer', emoji: '🖥️' },
+      { id: 'architect', name: 'Systems Architect', emoji: '🏛️' },
+      { id: 'director', name: 'Operations Director', emoji: '🧭' },
+      { id: 'principal', name: 'Principal Engineer', emoji: '⚙️' },
+      { id: 'vp', name: 'Vice President', emoji: '🏆' },
+      { id: 'founder', name: 'Startup Founder', emoji: '🚀' },
+      { id: 'investor', name: 'Angel Investor', emoji: '💸' },
+      { id: 'strategist', name: 'Chief Strategist', emoji: '♟️' },
+      { id: 'mogul', name: 'Industry Mogul', emoji: '💎' },
+      { id: 'tycoon', name: 'Global Tycoon', emoji: '🌍' },
+      { id: 'legend', name: 'Business Legend', emoji: '🌟' },
+      { id: 'ultra', name: 'Ultra Executive', emoji: '🛰️' },
+      { id: 'magnate', name: 'Corporate Magnate', emoji: '🏦' },
+      { id: 'visionary', name: 'World Visionary', emoji: '🔮' },
+      { id: 'icon', name: 'Economic Icon', emoji: '👑' },
+      { id: 'mythic', name: 'Mythic Earner', emoji: '🔥' },
+      { id: 'apex', name: 'Apex CEO', emoji: '💰' }
+    ];
+
+    function buildJobs() {
+      const jobs = { ...BASE_JOBS };
+      const stepLevels = EXTENDED_JOB_TEMPLATES.length - 1;
+      let level = 24;
+
+      const baseLevel = 21;
+      const maxLevel = 100;
+      const basePay = 34;
+      const bestPay = 240;
+
+      function getProgress(currentLevel) {
+        return (currentLevel - baseLevel) / (maxLevel - baseLevel);
+      }
+
+      function getPayForLevel(currentLevel) {
+        const progress = getProgress(currentLevel);
+        const scaled = Math.pow(progress, 1.25);
+        return Math.round((basePay + (bestPay - basePay) * scaled) * 100) / 100;
+      }
+
+      function getWordsForLevel(currentLevel) {
+        const progress = getProgress(currentLevel);
+        return Math.min(24, Math.max(13, 12 + Math.ceil(progress * 12)));
+      }
+
+      function getTimeLimitForLevel(currentLevel) {
+        const progress = getProgress(currentLevel);
+        return Math.min(60, Math.max(35, 34 + Math.ceil(progress * 26)));
+      }
+
+      for (let i = 0; i < stepLevels; i++) {
+        const template = EXTENDED_JOB_TEMPLATES[i];
+        const pay = getPayForLevel(level);
+        const words = getWordsForLevel(level);
+        const timeLimit = getTimeLimitForLevel(level);
+        const progress = getProgress(level);
+        const hasTips = i % 2 === 0;
+
+        jobs[template.id] = {
+          name: template.name,
+          emoji: template.emoji,
+          pay,
+          words,
+          timeLimit,
+          level,
+          tip: hasTips,
+          tipMax: hasTips ? Math.round(pay * (0.25 + progress * 0.25)) : 0,
+        };
+
+        level += 3;
+      }
+
+      const finalTemplate = EXTENDED_JOB_TEMPLATES[EXTENDED_JOB_TEMPLATES.length - 1];
+      jobs[finalTemplate.id] = {
+        name: finalTemplate.name,
+        emoji: finalTemplate.emoji,
+        pay: bestPay,
+        words: 24,
+        timeLimit: 60,
+        level: 100,
+        tip: true,
+        tipMax: Math.round(bestPay * 0.55),
+      };
+
+      return jobs;
+    }
+
+    const JOBS = buildJobs();
+
+    const JOB_ORDER = Object.entries(JOBS)
+      .sort((a, b) => a[1].level - b[1].level)
+      .map(([id]) => id);
+
+    const EXTRA_WORD_POOL = [
+      'workflow', 'strategy', 'planning', 'schedule', 'forecast', 'budget', 'margin', 'profit', 'revenue', 'contract',
+      'priority', 'timeline', 'milestone', 'quality', 'handoff', 'brief', 'review', 'status', 'summary', 'briefing',
+      'analysis', 'insight', 'reporting', 'dashboard', 'metrics', 'optimize', 'process', 'systems', 'platform', 'network',
+      'architecture', 'automation', 'pipeline', 'release', 'version', 'security', 'compliance', 'approval', 'decision', 'leadership',
+      'stakeholder', 'meeting', 'quarterly', 'annual', 'vision', 'roadmap', 'innovation', 'execution', 'ownership', 'outcome',
+      'productivity', 'resilience', 'performance', 'efficiency', 'alignment', 'coordination', 'negotiation', 'portfolio', 'capital', 'equity',
+      'valuation', 'partnership', 'expansion', 'scaling', 'enterprise', 'global', 'operations', 'initiative', 'direction', 'governance',
+      'impact', 'growth', 'market', 'brand', 'culture', 'talent', 'mentoring', 'coaching', 'training', 'expertise'
+    ];
+
+    function normalizeWord(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+
+    function createGeneratedWordList(jobId, jobName) {
+      const nameWords = jobName
+        .split(/\s+/)
+        .map(normalizeWord)
+        .filter(Boolean);
+
+      const masterPool = [...new Set([
+        ...Object.values(WORD_LISTS).flat().map(normalizeWord).filter(Boolean),
+        ...EXTRA_WORD_POOL.map(normalizeWord),
+      ])];
+
+      const seeded = nameWords.map((word) => `${word}${(jobId.length % 7) + 2}`);
+      const finalList = [...new Set([...nameWords, ...seeded])];
+
+      const targetSize = 50;
+      let index = 0;
+      while (finalList.length < targetSize) {
+        const word = masterPool[index % masterPool.length];
+        if (!finalList.includes(word)) finalList.push(word);
+        index++;
+      }
+
+      return finalList;
+    }
+
+    function ensureWordBanksForAllJobs() {
+      for (const [jobId, job] of Object.entries(JOBS)) {
+        if (!WORD_LISTS[jobId]) {
+          WORD_LISTS[jobId] = createGeneratedWordList(jobId, job.name);
+        }
+      }
+    }
 
     let state = loadState();
     let isWorking = false;
@@ -673,6 +717,36 @@
     function getCasinoBalance() {
       const raw = localStorage.getItem(CASINO_BALANCE_KEY);
       return raw ? Number(raw) : 1000;
+    }
+
+    function getPayLabel(job) {
+      if (!job.tip) return `$${job.pay.toFixed(2)} / shift`;
+      return `$${job.pay.toFixed(2)}-$${(job.pay + job.tipMax).toFixed(2)} / shift`;
+    }
+
+    function getTimeLabel(job) {
+      return job.tip ? `Type ${job.words} words + bonus` : `Type ${job.words} words`;
+    }
+
+    function renderJobs() {
+      const grid = document.getElementById('jobs-grid');
+      grid.innerHTML = JOB_ORDER.map((id) => {
+        const job = JOBS[id];
+        const unlockButton = id === 'dishes'
+          ? ''
+          : `<button class="upgrade-btn" onclick="unlockJob('${id}')" id="unlock-${id}">🔒 Unlock (Lvl ${job.level})</button>`;
+
+        return `
+          <div class="job-card" id="job-${id}">
+            <span class="emoji">${job.emoji}</span>
+            <div class="title">${job.name}</div>
+            <div class="pay">${getPayLabel(job)}</div>
+            <div class="time">${getTimeLabel(job)}</div>
+            <button class="work-btn" onclick="workShift('${id}')">Work Shift</button>
+            ${unlockButton}
+          </div>
+        `;
+      }).join('');
     }
 
     // ====== UI UPDATE ======
@@ -946,6 +1020,8 @@
     }
 
     // ====== INIT ======
+    ensureWordBanksForAllJobs();
+    renderJobs();
     updateUI();
   </script>
 </body>
